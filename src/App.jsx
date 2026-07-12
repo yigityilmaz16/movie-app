@@ -7,8 +7,10 @@ function App(){
 
   const [movies, setMovies] = useState([]);
   const [searchTerm,setSearchTerm] = useState("");
+  const [loading,setLoading] = useState(false);
 
   function searchFilm(searchTerm){
+    setLoading(true);
     fetch(`https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(searchTerm)}&language=tr-TR&page=1`, {
     headers: {
       Authorization: `Bearer ${import.meta.env.VITE_TMDB_TOKEN}`,
@@ -21,10 +23,12 @@ function App(){
     .then((data) => {
       setMovies(data.results);
     });
+     setLoading(false);
   }
 
 
  useEffect(() => {
+  setLoading(true);
   fetch("https://api.themoviedb.org/3/movie/popular?language=tr-TR&page=1", {
     headers: {
       Authorization: `Bearer ${import.meta.env.VITE_TMDB_TOKEN}`,
@@ -37,13 +41,14 @@ function App(){
     .then((data) => {
       setMovies(data.results);
     });
+     setLoading(false);
 }, []);
 
   return(
     <>
     <Header />
     <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} searchFilm={searchFilm} />
-    <MovieList movies={movies} />
+    <MovieList movies={movies} loading={loading}  />
     </>
   );
 }
