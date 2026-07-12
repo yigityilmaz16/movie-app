@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import SearchBar from "./components/SearchBar";
 import MovieList from "./components/MovieList";
@@ -22,6 +22,21 @@ function App(){
     }
 
   ])
+
+ useEffect(() => {
+  fetch("https://api.themoviedb.org/3/movie/popular?language=tr-TR&page=1", {
+    headers: {
+      Authorization: `Bearer ${import.meta.env.VITE_TMDB_TOKEN}`,
+      accept: "application/json",
+    },
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      setMovies(data.results);
+    });
+}, []);
 
   return(
     <>
