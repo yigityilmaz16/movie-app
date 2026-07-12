@@ -1,8 +1,14 @@
 
-function MovieCard(){
+function MovieCard({movie}){
     return(
         <>
-            <p>MovieCard</p>
+         
+            <p> {movie.title}</p>
+            <p> {movie.year}</p>
+            <p> {movie.rating}</p>
+            <p> {movie.poster}</p>
+          
+            
         
         </>
     );
