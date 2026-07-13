@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
-import Header from "./components/Header";
-import SearchBar from "./components/SearchBar";
-import MovieList from "./components/MovieList";
-import {Routes,Route} from "react-router-dom";
+import Header from "../components/Header";
+import SearchBar from "../components/SearchBar";
+import MovieList from "../components/MovieList";
 
 function HomePage({searchTerm, setSearchTerm, searchFilm, movies,loading,error}){
     return(

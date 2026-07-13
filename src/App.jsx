@@ -70,8 +70,14 @@ function App(){
 
   return(
     <>
+    <Routes>
+    <Route
+    path="/"
+    element={
     <HomePage searchTerm={searchTerm} setSearchTerm={setSearchTerm} searchFilm={searchFilm}
-     movies={movies} loading={loading} error={error} />
+     movies={movies} loading={loading} error={error} />} />
+    
+    </Routes>
     </>
   );
 }
