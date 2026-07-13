@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
-import Header from "./components/Header";
-import SearchBar from "./components/SearchBar";
-import MovieList from "./components/MovieList";
+import HomePage from "./pages/HomePage";
+import {Routes,Route} from "react-router-dom";
 
 function App(){
 
@@ -71,9 +70,8 @@ function App(){
 
   return(
     <>
-    <Header />
-    <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} searchFilm={searchFilm} />
-    <MovieList movies={movies} loading={loading} error={error}  />
+    <HomePage searchTerm={searchTerm} setSearchTerm={setSearchTerm} searchFilm={searchFilm}
+     movies={movies} loading={loading} error={error} />
     </>
   );
 }
