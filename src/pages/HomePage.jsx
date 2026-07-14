@@ -12,3 +12,4 @@ function HomePage({searchTerm, setSearchTerm, searchFilm, movies,loading,error})
     </>
   );
 }
+export default HomePage;

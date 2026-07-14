@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import HomePage from "./pages/HomePage";
 import {Routes,Route} from "react-router-dom";
+import MovieDetail from "./pages/MovieDetail";
 
 function App(){
 
@@ -76,6 +77,12 @@ function App(){
     element={
     <HomePage searchTerm={searchTerm} setSearchTerm={setSearchTerm} searchFilm={searchFilm}
      movies={movies} loading={loading} error={error} />} />
+    <Route
+    path="/movie/:id"
+    element={
+      <MovieDetail />
+    }
+    />
     
     </Routes>
     </>
