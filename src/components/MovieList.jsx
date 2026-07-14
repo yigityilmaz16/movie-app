@@ -21,12 +21,12 @@ function MovieList({movies,loading,error}) {
     }
     
     return(
-        <>
+        <div className="movie-grid">
              {movies.map((movie) => (
             <MovieCard key={movie.id} movie={movie}/>
         ))}
 
-        </>
+        </div>
     );
     
  

@@ -1,16 +1,79 @@
-# React + Vite
+# Movie-App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern movie discovery application built with React and the TMDB API. Browse popular movies, search by title, and open a dedicated page for each movie.
 
-Currently, two official plugins are available:
+## Preview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Home page
 
-## React Compiler
+![Movie-App home page](./screenshots/home-page.png)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Movie details
 
-## Expanding the ESLint configuration
+![Movie-App movie details page](./screenshots/movie-details.png)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Features
+
+- Browse popular movies from TMDB
+- Search movies by title
+- View posters, release dates, and ratings
+- Open a dedicated details page for each movie
+- Loading, error, and empty-state feedback
+- Responsive dark user interface
+- Dynamic movie details with React Router
+
+
+## Built With
+
+- [React](https://react.dev/)
+- [Vite](https://vite.dev/)
+- [React Router](https://reactrouter.com/)
+- [TMDB API](https://www.themoviedb.org/documentation/api)
+- CSS
+
+## Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone <your-repository-url>
+cd movie-app
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Add your TMDB token
+
+Create a `.env` file in the project root and add your TMDB Read Access Token:
+
+```env
+VITE_TMDB_TOKEN=your_tmdb_read_access_token
+```
+
+### 4. Run the app
+
+```bash
+npm run dev
+```
+
+Open the local URL shown in the terminal.
+
+## Usage
+
+1. The home page loads popular movies automatically.
+2. Enter a title in the search field and select **Search**.
+3. Select a movie card to view its details.
+
+## Important Note
+
+Your `.env` file contains a private API token and should not be committed to Git. It is already excluded through `.gitignore`.
+
+## Author
+
+Yiğit Yılmaz
+
+GitHub: https://github.com/yigityilmaz16

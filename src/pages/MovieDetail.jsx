@@ -51,20 +51,21 @@ function MovieDetail() {
     }
     
   return (
-    <div>
+    <div className="movie-detail">
     {movie.poster_path ? (
-    <img
+    <img className="detail-poster"
     src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
     alt={movie.title}
     />
 ) : (
   <p>Poster bulunamadı.</p>
 )}
+    <div className="detail-content">
     <h1>{movie.title}</h1>
-    <h1>{movie.release_date}</h1>
-    <h1>{movie.vote_average}</h1>
-    <h1>{movie.overview}</h1>
-    <Link to="/">Ana Sayfa</Link>
+    <p className="detail-meta">{movie.release_date} <span>★ {movie.vote_average.toFixed(1)}</span></p>
+    <p className="detail-overview">{movie.overview}</p>
+    <Link className="back-link" to="/">← Ana Sayfa</Link>
+    </div>
     </div>
   );
 }
