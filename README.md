@@ -36,7 +36,7 @@ A modern movie discovery application built with React and the TMDB API. Browse p
 ### 1. Clone the repository
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/yigityilmaz16/movie-app.git
 cd movie-app
 ```
 
